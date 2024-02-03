@@ -90,9 +90,11 @@ response2= requests.get(new_url)
 html2=response2.text
 
 soup2= BeautifulSoup(html2, 'html.parser')
+product_page= soup2.find('p', class_="")
+
 
 #Ввывод
-product_page= soup2.find('p', class_="")
+
 print(f'''  Название: {lst_title[inp-1]}
     Описание: {product_page.text}
     Цена: {lst_price[inp-1]}
